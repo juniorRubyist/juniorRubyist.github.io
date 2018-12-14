@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadiz Final Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mr. Cadiz Fall 2018 Final Calculator</h1>
+    <p>
+        Disclaimer: I assume no responsibility if you get a bad grade.<br>
+        Use this at your own risk and always try your best on any test. Good luck!
+        <br><br>-- Joseph Geis
+    </p><br>
+    <p>
+        Instructions:
+        <ol>
+            <li>Open your School Loop progress report for Mr. Cadiz's Honors Bio.</li>
+            <li>Enter the category averages into the corresponding boxes.</li>
+            <li>Enter a potential final exam score (in points out of 96).</li>
+            <li>Hit calculate to display your semester grade, <i>if</i> you achieve that score on the final.</li>
+        </ol>
+        
+    </p><br>
+    <script src="script.js"></script>
+    <form>
+        <label for="pct_a">% Grade in <i>Homework and classwork</i> category:</label>
+        <input type="number" id="pct_a" name="pct_a" step="0.01" onchange="calculate_score()" placeholder="--.--" required>%
+        <br><br>
+        <label for="pct_b">% Grade in <i>Labs</i> category:</label>
+        <input type="number" id="pct_b" name="pct_b" step="0.01" onchange="calculate_score()" placeholder="--.--" required>%
+        <br><br>
+        <label for="pct_c">Current % Grade in <i>Tests and Quizzes</i> category:</label>
+        <input type="number" id="pct_c" name="pct_c" step="0.01" onchange="calculate_score()" placeholder="--.--" required>%
+        <br><br>
+        <label for="pts">Prospective Final Grade (points out of 96): </label>
+        <input type="number" id="pts" name="pts" step="0.01" value="96" onchange="calc_b()" placeholder="--" required>/96 → <i id="final_pct">100.00</i><i>%</i>
+        <br><br>
+        <button onclick="calculate_score()" type="button">Calculate</button>
+    </form>
+    <h1>Your semester grade: <i id="final" onload="calculate_score()">--.--</i><i>%</i></h1>
+</body>
+</html>
